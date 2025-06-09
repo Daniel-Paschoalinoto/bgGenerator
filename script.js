@@ -2,10 +2,12 @@ const cssText = document.querySelector('h3')
 const [input1, input2] = document.querySelectorAll('.input')
 const body = document.querySelector('body')
 
-cssText.innerText = body.style.background
+cssText.innerText = `background: ${body.style.background};`
 
-function mudarGradient (){
-  cssText.innerText = body.style.background = `linear-gradient(to right, ${input1.value}, ${input2.value})`
+function mudarGradient () {
+  const gradient = `linear-gradient(to right, ${input1.value}, ${input2.value})`
+  body.style.background = gradient
+  cssText.innerText = `background: ${gradient};`
 }
 
 input1.addEventListener('input', mudarGradient)
